@@ -27,6 +27,15 @@ func sum(s []int, c chan int) {
 	fmt.Println("Done and can continue to do other work")
 }
 
+func basicExample() {
+	ch := make(chan string)
+
+	go sendData(ch)
+	go getData(ch)
+
+	fmt.Scanln()
+}
+
 func channelCommunication() {
 	s := []int{}
 	sliceSize := 10
@@ -144,7 +153,8 @@ func bufferedChannel() {
 }
 
 func main() {
-	channelCommunication()
-	asyncWait()
-	bufferedChannel()
+	basicExample()
+	// channelCommunication()
+	// asyncWait()
+	// bufferedChannel()
 }
